@@ -66,6 +66,7 @@ button:hover {
 }
 
 .compare-btn {
+    position: -webkit-sticky;
     position: sticky;
     margin-right: 0;
     bottom: 2rem;
@@ -100,11 +101,11 @@ button:hover {
 .card-inner {
     width: 100%;
     height: 90%;
-    margin: 0;
+    margin: 0 auto;
 }
 
 .card-big {
-    flex-basis: 100%;
+    width: 100%;
     height: 33vw;
     display: table;
     text-align: center;
@@ -113,6 +114,7 @@ button:hover {
 .header {
     background: var(--primary);
     width: 100%;
+    display: table;
 }
 
 a {
