@@ -1,0 +1,343 @@
+:root {
+    --primary: #FA2742;
+    --primary-hover: rgb(227, 37, 62);
+    --btn: white;
+    --text: #373833;
+    --background-cards: white;
+    --background: white;
+    /* rgb(235, 235, 235) */
+}
+
+* {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--text);
+}
+
+h1 {
+    display: table-cell;
+    vertical-align: middle;
+    color: var(--btn);
+    font-size: 12vw;
+    line-height: 100%;
+}
+
+p {
+    color: var(--text);
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--primary);
+}
+
+body {
+    margin: 0;
+    background-color: var(--background);
+}
+
+nav {
+    height: 3rem;
+    width: 100vw;
+}
+
+image {
+    display: inline-block;
+    width: 100%;
+}
+
+button {
+    border: none;
+    color: var(--btn);
+    background-color: var(--primary);
+    padding: .75rem;
+    margin-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: medium;
+    outline: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+.card {
+    height: 30vw;
+    padding-bottom: 3vw;
+    flex-basis: 48vw;
+    /* margin-top: 1.2rem;
+    margin-right: 1.2rem; */
+    background-color: var(--background-cards);
+    /* -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1); */
+}
+
+.card-inner {
+    width: 100%;
+    height: 90%;
+    margin: 0;
+}
+
+.card-big {
+    flex-basis: 100%;
+    height: 33vw;
+    display: table;
+    text-align: center;
+}
+
+.header {
+    background: var(--primary);
+}
+
+a {
+    color: var(--btn);
+    background-color: var(--primary);
+    padding: .75rem;
+    margin-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid lightgray;
+    font-size: medium;
+    height: 30px;
+    padding-left: .2rem;
+    outline: none;
+    background: var(--background);
+}
+
+input:focus {
+    border-bottom: 2px solid var(--primary-hover);
+}
+
+textarea {
+    border: none;
+    border-bottom: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+    font-size: medium;
+    outline: none;
+    resize: none;
+    background: var(--background);
+}
+
+textarea:focus {
+    border-top: 2px solid var(--primary-hover);
+    border-bottom: 2px solid var(--primary-hover);
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+tr {
+    height: 2rem;
+}
+
+thead {
+    border-bottom: 2px solid var(--primary);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+td:not(:first-child) {
+    text-align: right;
+}
+
+.bar-wrapper {
+    margin: 0 auto;
+    width: 80vw;
+    overflow-x: scroll;
+    overflow-y: inherit;
+}
+
+#bar-chart {
+    height: 400px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 1rem;
+}
+
+.bar-collection {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 100px;
+    height: 90%;
+    flex-wrap: nowrap;
+}
+
+.bar-collection-wrapper {
+    width: 100px;
+    height: 100%;
+    width: 100%;
+}
+
+.bar-collection>.bar {
+    background-color: var(--primary);
+    width: 50px;
+}
+
+.bar:last-child {
+    background-color: var(--primary-hover);
+}
+
+.invert {
+    margin-top: -1.5rem;
+    color: var(--text) !important;
+}
+
+.bar>p {
+    color: white;
+    text-align: center;
+    font-size: small;
+}
+
+.bar-names {
+    width: 100%;
+    height: 10%;
+    margin: 0;
+    text-overflow: ellipsis;
+    /* Needed to make it work */
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+input[type=search] {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+/* Radio button design creds to Abubaker Saeed April 16, 2019*/
+
+label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin: 12px 0;
+    cursor: pointer;
+    position: relative;
+}
+
+
+/* input */
+
+.c-input {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+
+/* .design */
+
+.design {
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--primary);
+    border-radius: 100%;
+    margin-right: 16px;
+    position: relative;
+}
+
+.design::before,
+.design::after {
+    content: "";
+    display: block;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    position: absolute;
+    transform: scale(0);
+    transform-origin: center center;
+}
+
+.check+.design {
+    border-radius: 3px;
+}
+
+.check+.design::before {
+    background: var(--primary);
+}
+
+.design:before {
+    background: none;
+    opacity: 0;
+    transition: .3s;
+}
+
+.design::after {
+    background: var(--primary);
+    opacity: .4;
+    transition: .6s;
+}
+
+
+/* .text */
+
+.text {
+    color: var(--text);
+    font-weight: bold;
+}
+
+
+/* checked state */
+
+.c-input:checked+.design::before {
+    opacity: 1;
+    transform: scale(.6);
+}
+
+
+/* other states */
+
+.c-input:hover+.design,
+.c-input:focus+.design {
+    border: 1px solid var(--primary);
+}
+
+.c-input:hover+.design:before,
+.c-input:focus+.design:before {
+    background: var(--primary);
+}
+
+.c-input:hover~.text {
+    color: var(--primary-hover);
+}
+
+.c-input:focus+.design::after,
+.c-input:active+.design::after {
+    /* Ring around */
+    opacity: .0;
+    transform: scale(1);
+}
