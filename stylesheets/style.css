@@ -89,7 +89,6 @@ button:hover {
 .card {
     height: 30vw;
     padding-bottom: 3vw;
-    flex-basis: 48vw;
     /* margin-top: 1.2rem;
     margin-right: 1.2rem; */
     background-color: var(--background-cards);
