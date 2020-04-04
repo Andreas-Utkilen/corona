@@ -127,6 +127,7 @@ input {
     padding-left: .2rem;
     outline: none;
     background: var(--background);
+    border-radius: 0;
 }
 
 input:focus {
@@ -239,7 +240,7 @@ input[type=search] {
 
 label {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
     flex-wrap: nowrap;
     margin: 12px 0;
@@ -279,7 +280,7 @@ label {
     height: inherit;
     border-radius: inherit;
     position: absolute;
-    transform: scale(0);
+    transform: scale(0.0);
     transform-origin: center center;
 }
 
@@ -339,6 +340,6 @@ label {
 .c-input:focus+.design::after,
 .c-input:active+.design::after {
     /* Ring around */
-    opacity: .0;
-    transform: scale(1);
+    opacity: 1.0;
+    transform: scale(.6);
 }

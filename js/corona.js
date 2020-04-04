@@ -3,6 +3,7 @@ let search_field = document.getElementById("search");
 search_field.onkeyup = search;
 
 var data_input = {};
+let current_sort = 'cases';
 
 async function downloadData() {
     var response = await fetch("https://covid-193.p.rapidapi.com/statistics", {
@@ -15,12 +16,12 @@ async function downloadData() {
     var body = await response.json()
     console.log(body);
     data_input = body.response;
-    createTable(body.response, 'cases')
+    createTable(body.response)
 
 }
 downloadData()
     /* Create table */
-function createTable(data, current_sort) {
+function createTable(data) {
     table.innerHTML = "";
 
     let total_deaths = 0;
@@ -30,7 +31,7 @@ function createTable(data, current_sort) {
 
     let chart_data = [];
 
-    createHeader(current_sort)
+    createHeader()
 
     switch (current_sort) {
         case 'country':
@@ -80,14 +81,15 @@ function createTable(data, current_sort) {
     drawBarChart(chart_data)
 }
 
-function createHeader(current_sort) {
+function createHeader() {
     let options = {
         country: "Land ◀︎",
         cases: "Smittede ◀︎",
         deaths: "Døde ◀︎",
         recovered: "Friskmeldte ◀︎",
         CPC: "Smittede per 1M",
-        DPC: "Smittede per 1M"
+        DPC: "Smittede per 1M",
+        compare: "Sammenlign"
     }
     options[current_sort] = options[current_sort].replace("◀︎", "▼")
     let header = table.createTHead();
@@ -110,6 +112,7 @@ function createRow(body, country, cases, deaths, recovered, cases_per_head, deat
     let _recovered = row.insertCell(3);
     let _cases_per_head = row.insertCell(4);
     let _deaths_per_head = row.insertCell(5);
+    let _compare = row.insertCell(6);
 
     _country.innerHTML = numberToString(country);
     _cases.innerHTML = numberToString(cases);
@@ -117,6 +120,26 @@ function createRow(body, country, cases, deaths, recovered, cases_per_head, deat
     _recovered.innerHTML = numberToString(recovered);
     _cases_per_head.innerHTML = numberToString(cases_per_head);
     _deaths_per_head.innerHTML = numberToString(deaths_per_head);
+
+    _compare.innerHTML = `<label>
+                            <input id="${country}" onclick="compare('${country}')" type="check" name="light" class="c-input check">
+                            <span class="design"></span>
+                        </label>`
+
+}
+
+function compare(id) {
+    var state = document.getElementById(id).checked;
+    console.log(state);
+
+    if (state == false) {
+
+    } else {
+
+    }
+
+    document.getElementById(id).checked = !state;
+
 }
 
 function calculatePer1M(cases, pop) {
@@ -132,7 +155,7 @@ function search() {
             tmp_data.push(c)
         }
     }
-    createTable(tmp_data)
+    createTable(tmp_data, current_sort)
 }
 
 function includes(attribute, value) {
