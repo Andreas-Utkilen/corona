@@ -1,6 +1,8 @@
 let table = document.getElementById("table");
 let search_field = document.getElementById("search");
 search_field.onkeyup = search;
+let compare_btn = document.getElementById("compare-btn");
+compare_btn.onclick = compare;
 
 var data_input = {};
 let current_sort = 'cases';
@@ -122,25 +124,30 @@ function createRow(body, country, cases, deaths, recovered, cases_per_head, deat
     _deaths_per_head.innerHTML = numberToString(deaths_per_head);
 
     _compare.innerHTML = `<label>
-                            <input id="${country}" onclick="compare('${country}')" type="check" name="light" class="c-input check">
+                            <input id="${country}" type="checkbox" name="light" class="c-input check">
                             <span class="design"></span>
-                        </label>`
+                        </label>`;
 
 }
 
 function compare(id) {
-    var state = document.getElementById(id).checked;
-    console.log(state);
-
-    if (state == false) {
-
-    } else {
-
+    var checkboxes = Array.from(document.getElementsByClassName("c-input")).filter(checkbox => checkbox.checked);
+    var values = [];
+    for (const box of checkboxes) {
+        values.push(box.id)
     }
+    var tmp_data = [];
 
-    document.getElementById(id).checked = !state;
+    for (const c of data_input) {
+        if (values.includes(c.country)) {
+            tmp_data.push(c)
+        }
+    }
+    createTable(tmp_data, current_sort)
 
 }
+
+
 
 function calculatePer1M(cases, pop) {
     return Math.round(cases / pop * 1000000)

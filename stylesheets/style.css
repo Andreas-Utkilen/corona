@@ -65,6 +65,16 @@ button:hover {
     background-color: var(--primary-hover);
 }
 
+.compare-btn {
+    position: fixed;
+    right: calc(10% - 2.5rem);
+    bottom: 2rem;
+    z-index: 5;
+    height: 3rem;
+    width: 8rem;
+    border-radius: 1.5rem;
+}
+
 .container {
     display: flex;
     flex-direction: row;
@@ -340,6 +350,6 @@ label {
 .c-input:focus+.design::after,
 .c-input:active+.design::after {
     /* Ring around */
-    opacity: 1.0;
-    transform: scale(.6);
+    opacity: 0.0;
+    transform: scale(1.5);
 }
