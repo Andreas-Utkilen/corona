@@ -198,8 +198,8 @@ td:not(:first-child) {
 .bar-collection {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: flex-end;
-    width: 100px;
     height: 90%;
     flex-wrap: nowrap;
 }

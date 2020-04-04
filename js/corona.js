@@ -132,6 +132,9 @@ function createRow(body, country, cases, deaths, recovered, cases_per_head, deat
 
 function compare(id) {
     var checkboxes = Array.from(document.getElementsByClassName("c-input")).filter(checkbox => checkbox.checked);
+    if (checkboxes.length == 0) {
+        return
+    }
     var values = [];
     for (const box of checkboxes) {
         values.push(box.id)
