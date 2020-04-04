@@ -66,8 +66,8 @@ button:hover {
 }
 
 .compare-btn {
-    position: fixed;
-    right: calc(10% - 2.5rem);
+    position: sticky;
+    margin-right: 0;
     bottom: 2rem;
     z-index: 5;
     height: 3rem;
