@@ -67,8 +67,10 @@ button:hover {
 
 .compare-btn {
     position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
     position: sticky;
-    margin-right: 0;
     bottom: 2rem;
     z-index: 5;
     height: 3rem;
@@ -244,6 +246,7 @@ td:not(:first-child) {
 input[type=search] {
     margin-top: 2rem;
     margin-bottom: 2rem;
+    -webkit-appearance: none;
 }
 
 
