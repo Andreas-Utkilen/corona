@@ -3,6 +3,12 @@ let search_field = document.getElementById("search");
 search_field.onkeyup = search;
 let compare_btn = document.getElementById("compare-btn");
 compare_btn.onclick = compare;
+let show_all_btn = document.getElementById("show-all-btn");
+show_all_btn.onclick = show;
+
+function show() {
+    document.getElementsByClassName("pane")[0].style.maxHeight = "inherit";
+}
 
 var data_input = {};
 let current_sort = 'cases';
