@@ -25,7 +25,7 @@ const populations = {
     "Tanzania": 56877529,
     "South Africa": 55436360,
     "Burma": 54836483,
-    "S. Korea": 50704971,
+    "S Korea": 50704971,
     "Colombia": 49067981,
     "Kenya": 48466928,
     "Spain": 46070146,
@@ -53,7 +53,7 @@ const populations = {
     "North Korea": 25405296,
     "Australia": 24641662,
     "Cameroon": 24513689,
-    "Côte d'Ivoire": 23815886,
+    "Ivory Coast": 23815886,
     "Niger": 21563607,
     "Sri Lanka": 20905335,
     "Romania": 19237513,
@@ -203,6 +203,17 @@ const populations = {
     "Channel Islands": 170499,
     "Puerto Rico": 3944259,
     "Macao": 622567,
-    "World": 7775000000
+    "World": 7775000000,
+    "Europe": 741400000,
+    "North America": 579000000,
+    "Asia": 4463000000,
+    "South America": 422500000,
+    "Africa": 1216000000,
+    "Oceanina": 42562027,
+    "Isle of Man": 84077,
+    "Mayotte": 270372,
+    "Gibraltar": 33718,
+
+
 
 }
