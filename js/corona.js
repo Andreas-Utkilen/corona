@@ -13,12 +13,11 @@ function show() {
     if (open_state) {
         pane.style.maxHeight = "69vh";
         show_all_btn.innerHTML = "Vis mer";
-        open_state = false;
     } else {
         pane.style.maxHeight = "inherit";
         show_all_btn.innerHTML = "Vis mindre";
-        open_state = true;
     }
+    open_state = !open_state;
 }
 
 var data_input = {};
