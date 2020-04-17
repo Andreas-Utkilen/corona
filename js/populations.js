@@ -209,7 +209,7 @@ const populations = {
     "Asia": 4463000000,
     "South America": 422500000,
     "Africa": 1216000000,
-    "Oceanina": 42562027,
+    "Oceania": 42562027,
     "Isle of Man": 84077,
     "Mayotte": 270372,
     "Gibraltar": 33718,
