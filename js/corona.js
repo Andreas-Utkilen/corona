@@ -100,7 +100,8 @@ function createHeader() {
         let cell = row.insertCell()
         cell.innerHTML = options[key];
         cell.onclick = () => {
-            createTable(data_input, key)
+            current_sort = key
+            createTable(data_input)
         }
     }
 }
@@ -130,8 +131,11 @@ function createRow(body, country, cases, deaths, recovered, cases_per_head, deat
 
 }
 
-function compare(id) {
+function compare() {
     var checkboxes = Array.from(document.getElementsByClassName("c-input")).filter(checkbox => checkbox.checked);
+    if (checkboxes.length == 0) {
+        return
+    }
     var values = [];
     for (const box of checkboxes) {
         values.push(box.id)
@@ -152,6 +156,7 @@ function compare(id) {
 function calculatePer1M(cases, pop) {
     return Math.round(cases / pop * 1000000)
 }
+
 /* Search function */
 function search() {
     var tmp_data = [];

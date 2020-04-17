@@ -66,8 +66,11 @@ button:hover {
 }
 
 .compare-btn {
-    position: fixed;
-    right: calc(10% - 2.5rem);
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    position: sticky;
     bottom: 2rem;
     z-index: 5;
     height: 3rem;
@@ -88,7 +91,6 @@ button:hover {
 .card {
     height: 30vw;
     padding-bottom: 3vw;
-    flex-basis: 48vw;
     /* margin-top: 1.2rem;
     margin-right: 1.2rem; */
     background-color: var(--background-cards);
@@ -100,11 +102,11 @@ button:hover {
 .card-inner {
     width: 100%;
     height: 90%;
-    margin: 0;
+    margin: 0 auto;
 }
 
 .card-big {
-    flex-basis: 100%;
+    width: 100%;
     height: 33vw;
     display: table;
     text-align: center;
@@ -113,6 +115,7 @@ button:hover {
 .header {
     background: var(--primary);
     width: 100%;
+    display: table;
 }
 
 a {
@@ -198,8 +201,8 @@ td:not(:first-child) {
 .bar-collection {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: flex-end;
-    width: 100px;
     height: 90%;
     flex-wrap: nowrap;
 }
@@ -243,6 +246,7 @@ td:not(:first-child) {
 input[type=search] {
     margin-top: 2rem;
     margin-bottom: 2rem;
+    -webkit-appearance: none;
 }
 
 
