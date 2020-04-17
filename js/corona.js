@@ -6,8 +6,19 @@ compare_btn.onclick = compare;
 let show_all_btn = document.getElementById("show-all-btn");
 show_all_btn.onclick = show;
 
+let open_state = false;
+
 function show() {
-    document.getElementsByClassName("pane")[0].style.maxHeight = "inherit";
+    let pane = document.getElementsByClassName("pane")[0]
+    if (open_state) {
+        pane.style.maxHeight = "69vh";
+        show_all_btn.innerHTML = "Vis mer";
+        open_state = false;
+    } else {
+        pane.style.maxHeight = "inherit";
+        show_all_btn.innerHTML = "Vis mindre";
+        open_state = true;
+    }
 }
 
 var data_input = {};
