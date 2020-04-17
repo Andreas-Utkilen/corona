@@ -69,7 +69,7 @@ function createTable(data) {
         const cases_per_1m = calculatePer1M(c.cases.total, populations[c.country]);
         const deaths_per_1m = calculatePer1M(c.deaths.total, populations[c.country]);
         createRow(body, c.country, c.cases.total, c.deaths.total, c.cases.recovered, cases_per_1m, deaths_per_1m);
-        chart_data.push({ country: c.country, value1: cases_per_1m, value2: deaths_per_1m, cases: c.cases.total })
+        if (!isNaN(cases_per_1m)) chart_data.push({ country: c.country, value1: cases_per_1m, value2: deaths_per_1m, cases: c.cases.total })
 
         total_cases += c.cases.total;
         total_deaths += c.deaths.total;
